@@ -1,0 +1,317 @@
+:root {
+  --background: #fafaf8;
+  --text: #252525;
+  --secondary: #686868;
+  --border: #deded8;
+  --link: #355b85;
+  --max-width: 850px;
+}
+
+[data-theme="dark"] {
+  --background: #171717;
+  --text: #eeeeeb;
+  --secondary: #aaa9a4;
+  --border: #383838;
+  --link: #8db8e6;
+}
+
+
+/* -------------------------
+   General
+------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 17px;
+  line-height: 1.65;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.container {
+  width: min(90%, var(--max-width));
+  margin: 0 auto;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* -------------------------
+   Navigation
+------------------------- */
+
+header {
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  min-height: 70px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.name:hover {
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+nav a {
+  color: var(--secondary);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+#theme-toggle {
+  border: none;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+
+/* -------------------------
+   Intro
+------------------------- */
+
+.hero {
+  display: grid;
+
+  grid-template-columns: 175px 1fr;
+
+  gap: 55px;
+
+  align-items: start;
+
+  padding: 80px 0 70px;
+}
+
+.photo img {
+  width: 175px;
+  height: 215px;
+
+  object-fit: cover;
+
+  border-radius: 3px;
+
+  display: block;
+}
+
+h1 {
+  font-size: 42px;
+  line-height: 1.1;
+
+  font-weight: 500;
+
+  margin: 0 0 8px;
+
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  font-family: Arial, Helvetica, sans-serif;
+
+  color: var(--secondary);
+
+  font-size: 15px;
+
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+
+.hero p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+
+  margin-top: 25px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.links a {
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+}
+
+.links a:hover {
+  color: var(--link);
+  text-decoration: none;
+}
+
+
+/* -------------------------
+   Sections
+------------------------- */
+
+hr {
+  margin: 0;
+
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+section:not(.hero) {
+  padding: 60px 0;
+
+  display: grid;
+
+  grid-template-columns: 160px 1fr;
+
+  gap: 35px;
+}
+
+h2 {
+  margin: 0;
+
+  font-size: 21px;
+
+  font-weight: 500;
+}
+
+.content > p:first-child {
+  margin-top: 0;
+}
+
+
+/* -------------------------
+   Publications
+------------------------- */
+
+.publication {
+  margin-bottom: 38px;
+}
+
+.publication:last-child {
+  margin-bottom: 0;
+}
+
+.publication h3 {
+  margin: 0 0 7px;
+
+  font-size: 17px;
+
+  line-height: 1.45;
+
+  font-weight: 600;
+}
+
+.publication p {
+  margin: 5px 0;
+}
+
+.venue {
+  color: var(--secondary);
+
+  font-style: italic;
+}
+
+.publication a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+
+
+/* -------------------------
+   Footer
+------------------------- */
+
+footer {
+  border-top: 1px solid var(--border);
+
+  padding: 35px 0 50px;
+
+  color: var(--secondary);
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+
+/* -------------------------
+   Mobile
+------------------------- */
+
+@media (max-width: 700px) {
+
+  nav {
+    gap: 12px;
+  }
+
+  nav a {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    padding-top: 50px;
+  }
+
+  .photo img {
+    width: 140px;
+    height: 170px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  section:not(.hero) {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+}
